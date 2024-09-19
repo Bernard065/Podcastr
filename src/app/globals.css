@@ -17,11 +17,28 @@ html {
     @apply flex flex-col sticky left-0 top-0 w-fit justify-between border-none bg-black-1 pt-8 text-white-1 max-md:hidden lg:w-[270px] lg:pl-8;
   }
 
-  .text-24 {
-    @apply text-[24px] leading-normal;
+  .right_sidebar {
+    @apply sticky right-0 top-0 flex w-[310px] flex-col overflow-x-hidden border-none bg-black-1 px-[30px] pt-8 max-xl:hidden;
+  }
+
+  .podcast_grid {
+    @apply grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4;
+  }
+  
+
+  .text-12 {
+    @apply text-[12px] leading-normal;
   }
 
   .text-16 {
     @apply text-[16px] leading-normal;
+  }
+
+  .text-20 {
+    @apply text-[20px] leading-normal;
+  }
+
+  .text-24 {
+    @apply text-[24px] leading-normal;
   }
 }
