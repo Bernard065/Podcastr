@@ -1,3 +1,4 @@
+import Leftsidebar from "@/components/Leftsidebar";
 import React from "react";
 
 export default function RootLayout({
@@ -6,8 +7,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main>
-      <p className="text-white-1">LEFTSIDEBAR</p>
+    <main className="relative flex bg-black-3">
+      <Leftsidebar />
       {children}
       <p className="text-white-1">RIGHTSIDEBAR</p>
     </main>
