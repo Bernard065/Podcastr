@@ -1,4 +1,4 @@
-import PodcastCard from "@/components/PodcastCard";
+import PodcastCard from "@/components/cards/PodcastCard";
 import { podcastData } from "@/constants";
 import React from "react";
 
