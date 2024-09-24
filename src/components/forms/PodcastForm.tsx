@@ -29,19 +29,24 @@ import { Button } from "../ui/button";
 import { Loader } from "lucide-react";
 import { Id } from "../../../convex/_generated/dataModel";
 
+
 const PodcastForm = () => {
   const [voiceType, setVoiceType] = useState("");
-  const [voicePrompt, setVoicePrompt] = useState('');
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [voicePrompt, setVoicePrompt] = useState("");
 
-  const [imagePrompt, setImagePrompt] = useState('');
-  const [imageStorageId, setImageStorageId] = useState<Id<"_storage"> | null>(null)
-  const [imageUrl, setImageUrl] = useState('');
-  
-  const [audioUrl, setAudioUrl] = useState('');
-  const [audioStorageId, setAudioStorageId] = useState<Id<"_storage"> | null>(null)
+  const [imagePrompt, setImagePrompt] = useState("");
+  const [imageStorageId, setImageStorageId] = useState<Id<"_storage"> | null>(
+    null
+  );
+  const [imageUrl, setImageUrl] = useState("");
+
+  const [audioUrl, setAudioUrl] = useState("");
+  const [audioStorageId, setAudioStorageId] = useState<Id<"_storage"> | null>(
+    null
+  );
   const [audioDuration, setAudioDuration] = useState(0);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof PodcastFormValidation>>({
@@ -144,7 +149,15 @@ const PodcastForm = () => {
         </div>
 
         <div className="flex flex-col pt-10">
-          <GeneratePodcast />
+          <GeneratePodcast
+            setAudioStorageId={setAudioStorageId}
+            setAudio={setAudioUrl}
+            voiceType={voiceType}
+            audio={audioUrl}
+            voicePrompt={voicePrompt}
+            setVoicePrompt={setVoicePrompt}
+            setAudioDuration={setAudioDuration}
+          />
 
           <GenerateThumbnail />
         </div>
